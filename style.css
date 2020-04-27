@@ -1,0 +1,333 @@
+/* font-family: 'Oswald', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: #2EC4B6;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #011627;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+
+}
+
+header {
+    width: 80%;
+    max-width: 768px;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+    letter-spacing: 2px;
+    margin: 0 auto;
+}
+
+header .title {
+    border-bottom: 6px solid #FF9F1C;
+}
+
+.select {
+    display: flex;
+    width: 100%;
+    max-width: 768px;
+    margin: 30px auto;
+    justify-content: space-around;
+
+}
+
+.select div {
+    position: relative;
+    height: 140px;
+    width: 140px;
+    padding: 20px;
+    border-radius: 50%;
+    border: 6px solid #E71D36;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.select div:hover {
+    /* color: black;
+    border-color: black; */
+    background-color: transparent;
+    border-color: #FF9F1C;
+    color: #FF9F1C;
+}
+
+
+
+.select div i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    text-align: center;
+    /* display: none; */
+
+}
+
+button.btn {
+    display: block;
+    font-size: 30px;
+    margin: 20px auto;
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 4px solid #FDFFFC;
+    text-transform: uppercase;
+    color: #FDFFFC;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button.play:hover {
+    background-color: #FF9F1C;
+}
+
+.results {
+    position: relative;
+    max-width: 768px;
+    width: 80%;
+    height: 30%;
+    margin: 0 auto;
+    border: 4px solid #E71D36;
+    letter-spacing: 1px;
+    overflow: hidden;
+    font-size: 18px
+}
+
+
+.results .left {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: 5%;
+
+}
+
+.results .right {
+    position: absolute;
+    width: 40%;
+    top: 0;
+    right: 0;
+
+}
+
+.results div h3 {
+    padding: 10px 0;
+    font-size: 24px;
+}
+
+.results div div {
+    padding: 5px 0;
+}
+
+.results div div span {
+    font-weight: 700;
+}
+
+.popup {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: 85%;
+    background-color: #2EC4B6;
+    display: none;
+    /* overflow: hidden; */
+    /* transform-origin: center; */
+    transition: 1s;
+}
+
+.popup.active {
+    display: block;
+}
+
+.popup h1 {
+    display: none;
+}
+
+.popup h2 {
+    display: none;
+}
+
+.popup .summary {
+    font-size: 80px;
+    font-family: 'Permanent Marker', cursive;
+
+    text-align: center;
+    padding-top: 40px;
+    opacity: 0;
+    transform: scale(0)
+}
+
+.popup .summary.active {
+    animation: whoWin 0.5s linear forwards 3s;
+}
+
+@keyframes whoWin {
+    0% {
+        opacity: 0;
+        transform: scale(0)
+    }
+
+    70% {
+        transform: scale(1.2);
+        opacity: 1;
+
+    }
+
+    85% {
+        transform: scale(0.8);
+        opacity: 1;
+
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+}
+
+.popup .player {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    transform: rotateY(180deg);
+
+
+
+}
+
+.popup .ai {
+    position: absolute;
+    top: 35%;
+    right: 10%;
+    transform-origin: (0 0);
+
+
+}
+
+.popup .player.anime {
+    animation: player_hand 1s linear infinite;
+    animation-iteration-count: 3;
+}
+
+.popup .ai.anime {
+    animation: ai_hand 1s linear infinite;
+    animation-iteration-count: 3;
+}
+
+@media(min-width:750px) {
+    .popup .player {
+        left: 15%;
+    }
+
+    .popup .ai {
+        right: 15%;
+    }
+
+
+}
+
+@media(min-width:900px) {
+    .popup .player {
+        left: 20%;
+    }
+
+    .popup .ai {
+        right: 20%;
+    }
+
+
+}
+
+@media(min-width:1100px) {
+    .popup .player {
+        left: 25%;
+    }
+
+    .popup .ai {
+        right: 25%;
+    }
+
+
+}
+
+@keyframes player_hand {
+    0% {}
+
+    50% {
+        transform: translate(-50px, -70px) rotateY(180deg) rotateZ(45deg);
+    }
+
+    100% {
+        transform: translate(0) rotateY(180deg) rotateZ(0);
+    }
+}
+
+@keyframes ai_hand {
+    0% {}
+
+    50% {
+        transform: translate(50px, -70px) rotateZ(45deg);
+    }
+
+    100% {
+        transform: translate(0) rotateZ(0);
+    }
+}
+
+.popup .again {
+    position: absolute;
+    top: none;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    display: none;
+}
+
+.popup .again.active {
+    display: block;
+}
+
+button.again:hover {
+    background-color: #FF9F1C;
+}
+
+.background {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    /* max-width: 700px; */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.2;
+    background-image: url('hand-tlo-2.jpg');
+    /* background-repeat: no-repeat; */
+    background-position: bottom;
+
+}
+
+
+
+footer {
+    width: 100%;
+
+    color: black;
+    /* background-color: white; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: white;
+}

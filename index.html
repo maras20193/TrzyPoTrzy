@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trzy po trzy</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7fed240b08.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Trzy po trzy</h1>
+    </header>
+    <section class="select">
+        <div class="hand" data-option='rock'><i class="fas fa-hand-rock"></i></div>
+        <div class="hand" data-option='paper'><i class="fas fa-hand-paper"></i></div>
+        <div class="hand" data-option='scissors'><i class="fas fa-hand-scissors"></i></div>
+
+    </section>
+    <button class="play btn">Let's play!</button>
+    <section class="results">
+        <div class="left">
+            <h3>Wyniki gry</h3>
+            <div>Twoj wybór: <span class="your_choice"></span></div>
+            <div>Wybor komputera: <span class="ai_choice"></span></div>
+            <div>Zwyciężca gry: <span class="who_win"></span></div>
+        </div>
+        <div class="right">
+            <h3>aktualne wyniki</h3>
+            <div>Liczba gier: <span class="game_numbers">0</span></div>
+            <div>Wygrane: <span class="wins-numbers">0</span></div>
+            <div>Przegrane: <span class="losses_numbers">0</span></div>
+            <div>Remisy: <span class="draws_numbers">0</span></div>
+        </div>
+    </section>
+    <div class="popup">
+        <div class="summary"></div>
+        <img src="img/hand_rock.png" alt="" class="player">
+        <img src="img/hand_rock.png" alt="" class="ai">
+        <button class="again btn">Zagraj ponownie</button>
+        <div class="background"></div>
+    </div>
+    <div class="background">
+    </div>
+    <footer>Maras Game</footer>
+
+
+    <script src='game.js'>
+    </script>
+</body>
+
+</html>
