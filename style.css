@@ -331,3 +331,133 @@ footer {
     text-align: center;
     color: white;
 }
+
+
+@media(orientation:portrait) {
+
+    .background {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    header {
+        width: 95%;
+        font-size: 28px;
+        text-align: center;
+        padding-top: 20px;
+        letter-spacing: 2px;
+        margin: 0 auto;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .select {
+
+        width: 95%;
+
+    }
+
+    .select div {
+        height: 110px;
+        width: 110px;
+        padding: 20px;
+        border-radius: 50%;
+        border: 4px solid #E71D36;
+        cursor: pointer;
+        transition: 0.3s;
+
+
+    }
+
+    .select div i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 70px;
+        text-align: center;
+        /* display: none; */
+    }
+
+    .results .left {
+        display: none
+    }
+
+    .results .right {
+        position: absolute;
+        width: 90%;
+        top: 0;
+        right: 0;
+    }
+
+    .results .right div {
+        font-size: 20px;
+
+    }
+
+
+    /* popup */
+
+
+    .popup {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+    }
+
+    .popup .summary {
+        font-size: 80px;
+        font-family: 'Permanent Marker', cursive;
+
+        text-align: center;
+        padding-top: 40px;
+        opacity: 0;
+        transform: scale(0)
+    }
+
+    .popup .player {
+        position: absolute;
+        top: 25%;
+        left: -5%;
+        transform: rotateY(180deg) scale(0.7);
+    }
+
+    .popup .ai {
+        transform: scale(0.7);
+        position: absolute;
+        top: 25%;
+        right: -5%;
+        transform-origin: (0 0);
+    }
+
+    @keyframes player_hand {
+        0% {}
+
+        50% {
+            transform: translate(-50px, -70px) rotateY(180deg) rotateZ(45deg) scale(0.7);
+        }
+
+        100% {
+            transform: translate(0) rotateY(180deg) rotateZ(0) scale(0.7);
+        }
+    }
+
+    @keyframes ai_hand {
+        0% {}
+
+        50% {
+            transform: translate(50px, -70px) rotateZ(45deg) scale(0.7);
+        }
+
+        100% {
+            transform: translate(0) rotateZ(0) scale(0.7);
+        }
+    }
+
+    .popup .again {
+        width: 80%;
+        bottom: 20%;
+    }
